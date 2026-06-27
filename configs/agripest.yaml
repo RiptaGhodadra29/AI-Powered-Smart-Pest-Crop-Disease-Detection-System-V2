@@ -1,0 +1,19 @@
+path: dataset/raw/agripest
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Ants
+  1: Bees
+  2: Beetles
+  3: Caterpillars
+  4: Earthworms
+  5: Earwigs
+  6: Grasshoppers
+  7: Moths
+  8: Slugs
+  9: Snails
+  10: Wasps
+  11: Weevils

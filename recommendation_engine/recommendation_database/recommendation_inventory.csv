@@ -1,0 +1,33 @@
+Recommendation_ID,Entity_Type,Entity_Name,Knowledge_Base_ID,Status
+REC001,Disease,Potato Early Blight,KD001,Active
+REC002,Disease,Potato Late Blight,KD002,Active
+REC003,Disease,Tomato Early Blight,KD003,Active
+REC004,Disease,Tomato Late Blight,KD004,Active
+REC005,Disease,Tomato Bacterial Spot,KD005,Active
+REC006,Disease,Tomato Leaf Mold,KD006,Active
+REC007,Disease,Tomato Septoria Leaf Spot,KD007,Active
+REC008,Disease,Tomato Target Spot,KD008,Active
+REC009,Disease,Tomato Mosaic Virus,KD009,Active
+REC010,Disease,Tomato Yellow Leaf Curl Virus,KD010,Active
+REC011,Disease,Tomato Spider Mites,KD011,Active
+REC012,Disease,Pepper Bell Bacterial Spot,KD012,Active
+REC013,Disease,Bell Pepper Leaf Spot,KD013,Active
+REC014,Disease,Corn Leaf Blight,KD014,Active
+REC015,Disease,Corn Gray Leaf Spot,KD015,Active
+REC016,Disease,Corn Rust,KD016,Active
+REC017,Disease,Apple Scab,KD017,Active
+REC018,Disease,Apple Rust,KD018,Active
+REC019,Disease,Grape Black Rot,KD019,Active
+REC020,Disease,Squash Powdery Mildew,KD020,Active
+REC021,Pest,Ants,PST001,Active
+REC022,Pest,Bees,PST002,Active
+REC023,Pest,Beetles,PST003,Active
+REC024,Pest,Caterpillars,PST004,Active
+REC025,Pest,Earthworms,PST005,Active
+REC026,Pest,Earwigs,PST006,Active
+REC027,Pest,Grasshoppers,PST007,Active
+REC028,Pest,Moths,PST008,Active
+REC029,Pest,Slugs,PST009,Active
+REC030,Pest,Snails,PST010,Active
+REC031,Pest,Wasps,PST011,Active
+REC032,Pest,Weevils,PST012,Active

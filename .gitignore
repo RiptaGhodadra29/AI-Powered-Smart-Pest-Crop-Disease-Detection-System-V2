@@ -1,0 +1,54 @@
+# OS/editor noise
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Node/frontend
+node_modules/
+**/node_modules/
+dist/
+dist-ssr/
+build/
+coverage/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/uploads/
+
+# Logs and runtime output
+logs/
+*.log
+runs/
+checkpoints/
+
+# Data and ML artifacts
+dataset/
+datasets/
+artifacts/
+*.pt
+*.pth
+*.onnx
+*.h5
+*.pkl
+*.joblib

@@ -1,0 +1,12 @@
+Test_ID,Input,Expected_Result,Actual_Result,Status
+TC001,Tomato Late Blight,,,Pending
+TC002,Potato Early Blight,,,Pending
+TC003,Corn Rust,,,Pending
+TC004,Caterpillars,,,Pending
+TC005,Grasshoppers,,,Pending
+TC006,Weevils,,,Pending
+TC007,Bees,,,Pending
+TC008,Earthworms,,,Pending
+TC009,Unknown Disease,,,Pending
+TC010,Unknown Pest,,,Pending
+TC011,Low Confidence Prediction,,,Pending

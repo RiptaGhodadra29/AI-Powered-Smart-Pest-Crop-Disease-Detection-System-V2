@@ -1,0 +1,19 @@
+project:
+  name: AI_Powered_Smart_Pest_Crop_Disease_Detection_System
+
+dataset:
+  image_size: 224
+  batch_size: 32
+
+training:
+  epochs: 25
+  learning_rate: 0.001
+
+optimizer:
+  name: AdamW
+
+loss:
+  name: WeightedCrossEntropy
+
+evaluation:
+  primary_metric: F1Score

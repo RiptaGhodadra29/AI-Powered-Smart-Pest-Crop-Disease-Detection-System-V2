@@ -1,0 +1,6 @@
+| Dataset      | Downloaded | Extracted | Verified | Location                 | Remarks            |
+| ------------ | ---------- | --------- | -------- | ------------------------ | ------------------ |
+| PlantVillage | Yes        | Yes       | Yes      | dataset/raw/plantvillage | 15 disease classes |
+| PlantDoc     | Yes        | Yes       | Yes      | dataset/raw/plantdoc     | 28 disease classes |
+| IP102        | Yes        | Yes       | Yes      | dataset/raw/ip102        | 102 pest classes   |
+| AgriPest     | No         | No        | No       | Not Downloaded           | Optional dataset   |

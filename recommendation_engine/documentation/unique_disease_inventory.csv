@@ -1,0 +1,21 @@
+Knowledge_ID,Disease_Name,Crop
+KD001,Potato Early Blight,Potato
+KD002,Potato Late Blight,Potato
+KD003,Tomato Early Blight,Tomato
+KD004,Tomato Late Blight,Tomato
+KD005,Tomato Bacterial Spot,Tomato
+KD006,Tomato Leaf Mold,Tomato
+KD007,Tomato Septoria Leaf Spot,Tomato
+KD008,Tomato Target Spot,Tomato
+KD009,Tomato Mosaic Virus,Tomato
+KD010,Tomato Yellow Leaf Curl Virus,Tomato
+KD011,Tomato Spider Mites,Tomato
+KD012,Pepper Bell Bacterial Spot,Pepper
+KD013,Bell Pepper Leaf Spot,Pepper
+KD014,Corn Leaf Blight,Corn
+KD015,Corn Gray Leaf Spot,Corn
+KD016,Corn Rust,Corn
+KD017,Apple Scab,Apple
+KD018,Apple Rust,Apple
+KD019,Grape Black Rot,Grape
+KD020,Squash Powdery Mildew,Squash

@@ -1,0 +1,5 @@
+| Dataset Name | Dataset Type | Purpose                | Total Images | Total Classes | Annotation Type | Download Date | Storage Size | Status     |
+| ------------ | ------------ | ---------------------- | ------------ | ------------- | --------------- | ------------- | ------------ | ---------- |
+| PlantVillage | Disease      | Disease Classification | To Verify    | 15            | Classification  | 30-May-2026   | To Verify    | Downloaded |
+| PlantDoc     | Disease      | Disease Classification | To Verify    | 28            | Classification  | 30-May-2026   | To Verify    | Downloaded |
+| IP102        | Pest         | Pest Classification    | 75,222       | 102           | Classification  | 30-May-2026   | To Verify    | Downloaded |

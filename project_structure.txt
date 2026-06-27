@@ -1,0 +1,350 @@
+.
+├── .DS_Store
+├── .gitignore
+├── README.md
+├── artifacts
+│   ├── history
+│   │   └── training_history.json
+│   ├── logs
+│   ├── model_metadata
+│   │   ├── baseline_cnn_metadata.json
+│   │   └── efficientnet_b0_metadata.json
+│   ├── models
+│   │   ├── disease
+│   │   └── pest
+│   └── plots
+│       ├── accuracy_curve.png
+│       └── loss_curve.png
+├── baseline_cnn_design.md
+├── baseline_development_readiness_review.md
+├── baseline_requirements.md
+├── config
+│   ├── __pycache__
+│   │   └── training_config.cpython-313.pyc
+│   └── training_config.py
+├── configs
+│   ├── agripest.yaml
+│   ├── baseline.yaml
+│   └── transfer_learning.yaml
+├── data_pipeline_design.md
+├── dataset
+│   ├── .DS_Store
+│   ├── annotations
+│   ├── final_dataset
+│   │   ├── test
+│   │   ├── train
+│   │   └── validation
+│   ├── metadata
+│   │   ├──  label_encoder_report.csv
+│   │   ├── Disease_Class_Mapping.csv
+│   │   ├── Pest_Class_Mapping.csv
+│   │   ├── Updated_Class_Mapping_Report.csv
+│   │   ├── class_to_id.json
+│   │   ├── dataset_inventory.json
+│   │   ├── dataset_summary.csv
+│   │   ├── id_to_class.json
+│   │   └── label_encoder_report.csv
+│   ├── processed
+│   │   ├── ip102
+│   │   ├── plantdoc
+│   │   └── plantvillage
+│   ├── raw
+│   │   ├── .DS_Store
+│   │   ├── agripest
+│   │   ├── ip102
+│   │   ├── plantdoc
+│   │   └── plantvillage
+│   ├── reports
+│   │   ├── download_report
+│   │   ├── eda_report
+│   │   ├── preprocessing_report
+│   │   ├── statistics_report
+│   │   └── validation_report
+│   ├── resized
+│   │   ├── ip102
+│   │   ├── plantdoc
+│   │   └── plantvillage
+│   ├── test
+│   ├── train
+│   └── validation
+├── dataset_pipeline_design.md
+├── datasets
+│   └── coco8
+│       ├── LICENSE
+│       ├── README.md
+│       ├── images
+│       └── labels
+├── docs
+│   └── Phase_2_Dataset_Research
+│       ├── Class_Mapping
+│       ├── Dataset_Comparison.csv
+│       ├── Dataset_Download_Tracker.csv
+│       ├── Dataset_Inventory.csv
+│       └── Dataset_Validation_Checklist.md
+├── error_analysis_strategy.md
+├── evaluation_strategy_report.md
+├── experiment_plan.md
+├── hardware_planning_report.md
+├── loss_function_report.md
+├── model_strategy_report.md
+├── models
+├── notebooks
+│   ├── 01_environment_test.ipynb
+│   ├── artifacts
+│   │   ├── logs
+│   │   └── models
+│   ├── runs
+│   │   └── crop_disease_experiment
+│   └── test_environment.ipynb
+├── optimizer_selection_report.md
+├── presentations
+├── project_structure.txt
+├── recommendation_engine
+│   ├── disease_knowledge_base
+│   ├── disease_knowledge_base.csv
+│   ├── disease_records
+│   │   ├── KD001_Potato_Early_Blight.md
+│   │   ├── KD002_Potato_Late_Blight.md
+│   │   ├── KD003_Tomato_Early_Blight.md
+│   │   ├── KD004_Tomato_Late_Blight.md
+│   │   ├── KD005_Tomato_Bacterial_Spot.md
+│   │   ├── KD006_Tomato_Leaf_Mold.md
+│   │   ├── KD007_Tomato_Septoria_Leaf_Spot.md
+│   │   ├── KD008_Tomato_Target_Spot.md
+│   │   ├── KD009_Tomato_Mosaic_Virus.md
+│   │   ├── KD010_Tomato_Yellow_Leaf_Curl_Virus.md
+│   │   ├── KD011_Tomato_Spider_Mites.md
+│   │   ├── KD012_Pepper_Bell_Bacterial_Spot.md
+│   │   ├── KD013_Bell_Pepper_Leaf_Spot.md
+│   │   ├── KD014_Corn_Leaf_Blight.md
+│   │   ├── KD015_Corn_Gray_Leaf_Spot.md
+│   │   ├── KD016_Corn_Rust.md
+│   │   ├── KD017_Apple_Scab.md
+│   │   ├── KD018_Apple_Rust.md
+│   │   ├── KD019_Grape_Black_Rot.md
+│   │   ├── KD020_Squash_Powdery_Mildew.md
+│   │   └── template.md
+│   ├── documentation
+│   │   ├── disease_inventory.csv
+│   │   ├── disease_schema.md
+│   │   ├── knowledge_sources.md
+│   │   ├── pest_inventory.csv
+│   │   ├── pest_research_tracker.csv
+│   │   ├── unique_disease_inventory.csv
+│   │   └── unique_pest_inventory.csv
+│   ├── logic
+│   │   ├── disease_recommender_design.md
+│   │   ├── farmer_message_generator_design.md
+│   │   ├── farmer_message_templates.md
+│   │   ├── pest_recommender_design.md
+│   │   ├── recommendation_engine_architecture.md
+│   │   ├── recommendation_input_output_design.md
+│   │   ├── recommendation_logic_design.md
+│   │   ├── recommendation_pseudocode.md
+│   │   ├── recommendation_rules.md
+│   │   ├── recommendation_service_design.md
+│   │   └── recommendation_workflow.md
+│   ├── pest_knowledge_base
+│   ├── pest_knowledge_base.csv
+│   ├── pest_records
+│   │   ├── PST001_Ants.md
+│   │   ├── PST002_Bees.md
+│   │   ├── PST003_Beetles.md
+│   │   ├── PST004_Caterpillars.md
+│   │   ├── PST005_Earthworms.md
+│   │   ├── PST006_Earwigs.md
+│   │   ├── PST007_Grasshoppers.md
+│   │   ├── PST008_Moths.md
+│   │   ├── PST009_Slugs.md
+│   │   ├── PST010_Snails.md
+│   │   ├── PST011_Wasps.md
+│   │   ├── PST012_Weevils.md
+│   │   └── template.md
+│   ├── recommendation_database
+│   │   └── recommendation_inventory.csv
+│   ├── testing
+│   │   ├── recommendation_test_cases.md
+│   │   ├── recommendation_test_results.csv
+│   │   └── recommendation_validation_checklist.md
+│   └── treatment_recommendation_database.csv
+├── reports
+│   ├── baseline_model_report.md
+│   ├── future_improvements.md
+│   ├── optimization_report.md
+│   ├── optimization_summary.md
+│   ├── pest_detection_evaluation
+│   │   └── evaluation_report.md
+│   └── recommendation_testing
+│       └── recommendation_testing_report.md
+├── requirements.txt
+├── research_papers
+├── runs
+│   ├── crop_disease_experiment
+│   │   └── events.out.tfevents.1781603750.Riptas-MacBook-Air.local.2837.0
+│   └── detect
+│       ├── experiments
+│       ├── predict
+│       ├── train
+│       ├── val
+│       └── val-2
+├── scripts
+│   └── class_distribution.py
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   └── __init__.cpython-313.pyc
+│   ├── data_preparation
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── augmentation_config.json
+│   │   ├── augmentation_pipeline.py
+│   │   ├── class_distribution_analysis.py
+│   │   ├── class_name_standardization.py
+│   │   ├── corrupted_image_detection.py
+│   │   ├── dataset_inventory.py
+│   │   ├── dataset_loader.py
+│   │   ├── dataset_splitting.py
+│   │   ├── dataset_statistics.py
+│   │   ├── dataset_validator.py
+│   │   ├── dataset_visualization.py
+│   │   ├── duplicate_image_detection.py
+│   │   ├── image_cleaning.py
+│   │   ├── image_normalization.py
+│   │   ├── image_resizing.py
+│   │   ├── label_encoding.py
+│   │   ├── missing_data_validation.py
+│   │   └── transforms.py
+│   ├── evaluation
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── evaluate.py
+│   │   ├── evaluator.py
+│   │   └── metrics.py
+│   ├── inference
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── disease_predictor.py
+│   │   ├── image_preprocessor.py
+│   │   ├── model_loader.py
+│   │   ├── result_formatter.py
+│   │   ├── test_inference.py
+│   │   ├── test_prediction.py
+│   │   ├── test_unified_predictor.py
+│   │   └── unified_predictor.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── baseline_cnn.py
+│   │   └── efficientnet_b0.py
+│   ├── recommendation_engine
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── disease_recommender.py
+│   │   ├── farmer_message_generator.py
+│   │   ├── knowledge_base_loader.py
+│   │   ├── pest_recommender.py
+│   │   ├── recommendation_service.py
+│   │   ├── test_cases_disease.py
+│   │   ├── test_cases_pest.py
+│   │   ├── test_disease_recommender.py
+│   │   ├── test_edge_cases.py
+│   │   ├── test_farmer_message_generator.py
+│   │   ├── test_integration.py
+│   │   ├── test_loader.py
+│   │   ├── test_pest_recommender.py
+│   │   ├── test_recommendation_service.py
+│   │   └── test_unknown_predictions.py
+│   ├── training
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── loss_optimizer.py
+│   │   ├── train.py
+│   │   ├── train_efficientnet.py
+│   │   ├── trainer.py
+│   │   └── utils.py
+│   ├── utils
+│   │   ├── __pycache__
+│   │   └── file_utils.py
+│   └── visualization
+│       ├── __pycache__
+│       └── training_curves.py
+├── system_architecture_report.md
+├── technology_selection_report.md
+├── training_strategy_report.md
+├── venv
+│   ├── .gitignore
+│   ├── bin
+│   │   ├── Activate.ps1
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── debugpy
+│   │   ├── debugpy-adapter
+│   │   ├── f2py
+│   │   ├── fonttools
+│   │   ├── httpx
+│   │   ├── idna
+│   │   ├── ipython
+│   │   ├── ipython3
+│   │   ├── isympy
+│   │   ├── jlpm
+│   │   ├── jsonpointer
+│   │   ├── jsonschema
+│   │   ├── jupyter
+│   │   ├── jupyter-console
+│   │   ├── jupyter-dejavu
+│   │   ├── jupyter-events
+│   │   ├── jupyter-execute
+│   │   ├── jupyter-kernel
+│   │   ├── jupyter-kernelspec
+│   │   ├── jupyter-lab
+│   │   ├── jupyter-labextension
+│   │   ├── jupyter-labhub
+│   │   ├── jupyter-migrate
+│   │   ├── jupyter-nbconvert
+│   │   ├── jupyter-notebook
+│   │   ├── jupyter-run
+│   │   ├── jupyter-server
+│   │   ├── jupyter-troubleshoot
+│   │   ├── jupyter-trust
+│   │   ├── markdown_py
+│   │   ├── normalizer
+│   │   ├── numpy-config
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.13
+│   │   ├── pybabel
+│   │   ├── pyftmerge
+│   │   ├── pyftsubset
+│   │   ├── pygmentize
+│   │   ├── pyjson5
+│   │   ├── python -> python3.13
+│   │   ├── python3 -> python3.13
+│   │   ├── python3.13 -> /Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13
+│   │   ├── send2trash
+│   │   ├── sz_split
+│   │   ├── sz_wc
+│   │   ├── tensorboard
+│   │   ├── torchfrtrace
+│   │   ├── torchrun
+│   │   ├── tqdm
+│   │   ├── ttx
+│   │   ├── ultralytics
+│   │   ├── wsdump
+│   │   └── yolo
+│   ├── etc
+│   │   └── jupyter
+│   ├── include
+│   │   └── python3.13
+│   ├── lib
+│   │   └── python3.13
+│   ├── pyvenv.cfg
+│   └── share
+│       ├── applications
+│       ├── icons
+│       ├── jupyter
+│       └── man
+├── yolo11s.pt
+└── yolo26n.pt
+
+109 directories, 239 files
