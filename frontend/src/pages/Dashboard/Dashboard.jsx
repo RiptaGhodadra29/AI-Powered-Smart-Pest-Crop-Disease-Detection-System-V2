@@ -12,6 +12,8 @@ import { useCountUp } from "../../hooks/useCountUp";
 
 const StatCard = ({ icon, label, value, suffix = "", decimals = 0 }) => {
   const display = useCountUp(value, { decimals });
+  const isTextValue =
+    typeof display === "string" && display.trim() !== "" && Number.isNaN(Number(display));
 
   return (
     <Card className="group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
@@ -19,13 +21,22 @@ const StatCard = ({ icon, label, value, suffix = "", decimals = 0 }) => {
         className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand-200/0 blur-2xl transition-all duration-500 group-hover:bg-brand-200/50"
         aria-hidden="true"
       />
-      <div className="relative flex items-center gap-3">
+      <div className="relative flex min-w-0 items-center gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-transform duration-300 group-hover:scale-110">
           <Icon name={icon} className="h-5 w-5" />
         </span>
-        <h2 className="text-sm font-medium text-neutral-500">{label}</h2>
+        <h2 className="min-w-0 truncate text-sm font-medium text-neutral-500">
+          {label}
+        </h2>
       </div>
-      <p className="relative mt-4 text-3xl font-bold tracking-tight text-neutral-900 tabular-nums">
+      <p
+        className={`relative mt-4 min-w-0 font-bold tracking-tight text-neutral-900 ${
+          isTextValue
+            ? "truncate text-2xl leading-tight"
+            : "text-3xl tabular-nums"
+        }`}
+        title={isTextValue ? display : undefined}
+      >
         {display}
         {suffix}
       </p>
