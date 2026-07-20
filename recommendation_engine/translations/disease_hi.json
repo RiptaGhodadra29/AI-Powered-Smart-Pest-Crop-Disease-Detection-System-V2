@@ -1,0 +1,10 @@
+{
+  "Potato Early Blight": {
+    "description": "यह आलू की एक फफूंद जनित बीमारी है।",
+    "treatment": "अनुशंसित फफूंदनाशक का उपयोग करें।",
+    "organic_treatment": "नीम तेल का छिड़काव करें।",
+    "chemical_treatment": "मैन्कोज़ेब का उपयोग करें।",
+    "preventive_measures": "स्वस्थ बीजों का उपयोग करें।",
+    "monitoring_actions": "पत्तियों की नियमित जांच करें।"
+  }
+}

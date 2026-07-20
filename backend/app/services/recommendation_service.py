@@ -1,79 +1,104 @@
-from src.recommendation_engine.disease_recommender import (
-    DiseaseRecommender
-)
-
-from src.recommendation_engine.pest_recommender import (
-    PestRecommender
-)
+import pandas as pd
 
 from backend.app.services.disease_name_mapper import (
     map_disease_name
 )
 
-
-disease_recommender = DiseaseRecommender()
-pest_recommender = PestRecommender()
+CSV_PATH = (
+    "recommendation_engine/"
+    "disease_knowledge_base.csv"
+)
 
 
 def get_recommendation(
-    class_name: str
+    disease_name: str,
+    language: str = "en"
 ):
 
-    mapped_name = map_disease_name(
-        class_name
-    )
+    try:
 
-    recommendation = (
-        disease_recommender.get_recommendation(
-            mapped_name
+        mapped_name = map_disease_name(
+            disease_name
         )
-    )
 
-    if recommendation["status"] != "success":
+        df = pd.read_csv(
+            CSV_PATH
+        )
+
+        disease_row = df[
+            df["disease_name"]
+            .str.lower()
+            ==
+            mapped_name.lower()
+        ]
+
+        if disease_row.empty:
+
+            return {
+                "disease_name": mapped_name,
+                "severity": "Unknown",
+                "description":
+                    f"No recommendation found for {mapped_name}",
+                "treatment":
+                    "Consult agricultural expert.",
+                "organic_treatment":
+                    "Not Available",
+                "chemical_treatment":
+                    "Not Available",
+                "preventive_measures":
+                    "Not Available",
+                "monitoring_actions":
+                    "Monitor crop condition"
+            }
+
+        disease_row = disease_row.iloc[0]
 
         return {
-            "disease_name": mapped_name,
+
+            "disease_name":
+                disease_row["disease_name"],
+
+            "severity":
+                disease_row["severity_level"],
+
+            "description":
+                disease_row["description"],
+
+            "treatment":
+                disease_row["treatment"],
+
+            "organic_treatment":
+                disease_row["organic_treatment"],
+
+            "chemical_treatment":
+                disease_row["chemical_treatment"],
+
+            "preventive_measures":
+                disease_row["preventive_measures"],
+
+            "monitoring_actions":
+                disease_row["monitoring_actions"]
+        }
+
+    except Exception as e:
+
+        print(
+            f"CSV Recommendation Error: {e}"
+        )
+
+        return {
+            "disease_name": disease_name,
             "severity": "Unknown",
-            "description": "Recommendation not available",
-            "treatment": "Consult agricultural expert",
-            "organic_treatment": "",
-            "chemical_treatment": "",
-            "preventive_measures": "",
-            "monitoring_actions": ""
+            "description":
+                "Recommendation currently unavailable.",
+            "treatment":
+                "Not Available",
+            "organic_treatment":
+                "Not Available",
+            "chemical_treatment":
+                "Not Available",
+            "preventive_measures":
+                "Not Available",
+            "monitoring_actions":
+                "Not Available"
         }
-
-    return {
-        "disease_name": recommendation["disease_name"],
-        "severity": recommendation["severity_level"],
-        "description": recommendation["description"],
-        "treatment": recommendation["treatment"],
-        "organic_treatment": recommendation["organic_treatment"],
-        "chemical_treatment": recommendation["chemical_treatment"],
-        "preventive_measures": recommendation["preventive_measures"],
-        "monitoring_actions": recommendation["monitoring_actions"]
-    }
-
-
-def get_pest_recommendation(
-    pest_name: str
-):
-
-    recommendation = (
-        pest_recommender.get_recommendation(
-            pest_name
-        )
-    )
-
-    if recommendation["status"] != "success":
-
-        return {
-            "pest_name": pest_name,
-            "damage_severity": "Unknown",
-            "description": "Recommendation not available",
-            "organic_control": "",
-            "chemical_control": "",
-            "prevention_measures": "",
-            "monitoring_actions": ""
-        }
-
-    return recommendation

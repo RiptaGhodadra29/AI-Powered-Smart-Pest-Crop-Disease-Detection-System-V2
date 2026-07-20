@@ -8,6 +8,7 @@ class AIRouterRequest(BaseModel):
 
     # manual router for now
     image_type: str
+    language: str = "en"
 
 
 class AIRouterResponse(BaseModel):

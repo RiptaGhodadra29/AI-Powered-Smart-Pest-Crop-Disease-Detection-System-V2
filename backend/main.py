@@ -9,6 +9,8 @@ from backend.app.api.dashboard import router as dashboard_router
 from backend.app.api.docs import router as docs_router
 from backend.app.api import pest_detection
 from backend.app.api.ai_router import (router as ai_router_router)
+from backend.app.api.recommendation import (router as recommendation_router)
+
 
 
 # Core setup
@@ -82,7 +84,14 @@ app.include_router(
 )
 
 app.include_router(
+    recommendation_router,
+    prefix="/recommendation",
+    tags=["Recommendation"]
+)
+
+app.include_router(
     ai_router_router,
     prefix="/router",
     tags=["AI Router"]
 )
+

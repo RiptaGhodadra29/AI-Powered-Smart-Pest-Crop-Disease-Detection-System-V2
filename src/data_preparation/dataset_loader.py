@@ -48,7 +48,7 @@ def create_datasets(dataset_root):
     )
 
     validation_dataset = ImageFolder(
-        dataset_root / "validation"
+        dataset_root / "val"
     )
 
     test_dataset = ImageFolder(

@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 import { Page, PageHeader } from "../../components/ui/Page";
 import { Card, CardBody, CardHeader } from "../../components/ui/Card";
@@ -70,6 +71,9 @@ const PredictionResult = () => {
   const location = useLocation();
   const { t } = useLanguage();
   const pageData = location.state;
+  const [recommendation] = useState(
+  pageData?.recommendation || null
+);
 
   if (!pageData) {
     return (
@@ -93,7 +97,6 @@ const PredictionResult = () => {
 
   const imageType = pageData.prediction_type;
   const imagePreview = pageData.imagePreview;
-  const recommendation = pageData.recommendation;
   const isPest = imageType === "pest";
   const confTone = confidenceTone(pageData.confidence);
 
@@ -153,7 +156,7 @@ const PredictionResult = () => {
                   {isPest ? t.pest : t.disease}
                 </p>
                 <p className="mt-1 text-2xl font-bold tracking-tight text-neutral-900">
-                  {pageData.prediction_name}
+                  {pageData.class_name}
                 </p>
               </div>
 

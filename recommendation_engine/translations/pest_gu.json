@@ -1,0 +1,10 @@
+{
+  "Potato Early Blight": {
+    "description": "આ બટાકાની ફૂગજન્ય બીમારી છે.",
+    "treatment": "ભલામણ કરાયેલ ફૂગનાશકનો ઉપયોગ કરો.",
+    "organic_treatment": "લીમડાના તેલનો છંટકાવ કરો.",
+    "chemical_treatment": "મેન્કોઝેબનો ઉપયોગ કરો.",
+    "preventive_measures": "સ્વસ્થ બીજનો ઉપયોગ કરો.",
+    "monitoring_actions": "પાંદડાની નિયમિત તપાસ કરો."
+  }
+}

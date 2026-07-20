@@ -14,11 +14,11 @@ from src.training.utils import EarlyStopping
 # Configuration
 # ======================================
 
-NUM_CLASSES = 34
+NUM_CLASSES = 60
 
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 
-EPOCHS = 20
+EPOCHS = 25
 
 LEARNING_RATE = 0.001
 

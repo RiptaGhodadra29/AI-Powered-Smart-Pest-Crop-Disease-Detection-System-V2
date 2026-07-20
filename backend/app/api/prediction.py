@@ -28,10 +28,11 @@ def predict_disease_api(
 ):
 
     result = create_prediction(
-        db=db,
-        user_id=request.user_id,
-        image_id=request.image_id
-    )
+    db=db,
+    user_id=request.user_id,
+    image_id=request.image_id,
+    language=request.language
+)
 
     if not result:
         raise HTTPException(

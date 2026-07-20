@@ -5,15 +5,17 @@ from src.inference.image_preprocessor import preprocess_image
 from src.inference.model_loader import load_disease_model
 from src.inference.result_formatter import format_prediction_result
 
-from src.recommendation_engine.prediction_recommendation_pipeline import (
-    PredictionRecommendationPipeline
-)
-
 
 CLASS_NAMES = [
     "Apple_Rust",
     "Apple_Scab",
     "Apple_healthy",
+    "Banana_Black_Sigatoka",
+    "Banana_Bract_Mosaic_Virus",
+    "Banana_Moko_Disease",
+    "Banana_Panama_Disease",
+    "Banana_Yellow_Sigatoka",
+    "Banana_healthy",
     "Blueberry_healthy",
     "Cherry_healthy",
     "Corn_Blight",
@@ -21,6 +23,18 @@ CLASS_NAMES = [
     "Corn_Rust",
     "Grape_Black_Rot",
     "Grape_healthy",
+    "Groundnut_Nutrition_Deficiency",
+    "Groundnut_Rust",
+    "Groundnut_Tikka_Leaf_Spot",
+    "Groundnut_healthy",
+    "Mango_Anthracnose",
+    "Mango_Bacterial_Canker",
+    "Mango_Cutting_Weevil",
+    "Mango_Die_Back",
+    "Mango_Gall_Midge",
+    "Mango_Powdery_Mildew",
+    "Mango_Sooty_Mould",
+    "Mango_healthy",
     "Peach_healthy",
     "Pepper__bell___Bacterial_spot",
     "Pepper__bell___healthy",
@@ -34,6 +48,10 @@ CLASS_NAMES = [
     "Rice_Tungro",
     "Soybean_healthy",
     "Strawberry_healthy",
+    "Sugarcane_Red_Rot",
+    "Sugarcane_Rust",
+    "Sugarcane_Smut",
+    "Sugarcane_healthy",
     "Tomato_Bacterial_spot",
     "Tomato_Early_blight",
     "Tomato_Late_blight",
@@ -44,7 +62,11 @@ CLASS_NAMES = [
     "Tomato__Tomato_YellowLeaf__Curl_Virus",
     "Tomato__Tomato_mosaic_virus",
     "Tomato_healthy",
-    "Unknown_Crop"
+    "Unknown_Crop",
+    "Wheat_Brown_Rust",
+    "Wheat_Powdery_Mildew",
+    "Wheat_Yellow_Rust",
+    "Wheat_healthy"
 ]
 
 
@@ -53,10 +75,6 @@ class DiseasePredictor:
     def __init__(self):
 
         self.model, self.device = load_disease_model()
-
-        self.recommendation_pipeline = (
-            PredictionRecommendationPipeline()
-        )
 
     def predict(self, image_path):
 
@@ -95,17 +113,6 @@ class DiseasePredictor:
             ),
             prediction_type="disease",
             model_name="EfficientNet-B0"
-        )
-
-        recommendation = (
-            self.recommendation_pipeline
-            .get_disease_recommendation(
-                predicted_label
-            )
-        )
-
-        result["recommendation"] = (
-            recommendation
         )
 
         return result

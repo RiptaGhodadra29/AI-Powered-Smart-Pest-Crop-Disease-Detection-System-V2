@@ -5,6 +5,7 @@ from backend.app.models import User
 from backend.app.models import UploadedImage
 from backend.app.models import Prediction
 from backend.app.models import Recommendation
+from backend.app.models import AIRecommendationCache
 
 
 def create_tables():

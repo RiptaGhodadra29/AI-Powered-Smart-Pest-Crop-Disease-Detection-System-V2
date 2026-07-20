@@ -2,7 +2,8 @@ import api from "./api";
 
 export const routerPredict = async (
   imageId,
-  imageType
+  imageType,
+  language
 ) => {
   const response = await api.post(
     "/router/predict",
@@ -10,6 +11,7 @@ export const routerPredict = async (
       user_id: 1,
       image_id: imageId,
       image_type: imageType,
+      language: language,
     }
   );
 

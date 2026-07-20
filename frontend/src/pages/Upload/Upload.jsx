@@ -15,7 +15,7 @@ import { useLanguage } from "../../context/LanguageContext";
 
 const Upload = () => {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const imageTypes = [
     {
@@ -63,7 +63,8 @@ const Upload = () => {
       setUploadResult(uploadResponse);
 
       // AI Router Prediction
-      const result = await routerPredict(uploadResponse.image_id, imageType);
+      console.log("Selected Language =", language);
+      const result = await routerPredict(uploadResponse.image_id, imageType,language);
 
       toast.success(t.upload_success);
 

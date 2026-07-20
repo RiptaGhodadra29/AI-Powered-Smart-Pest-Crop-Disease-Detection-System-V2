@@ -30,7 +30,9 @@ def predict_image(
         db=db,
         user_id=request.user_id,
         image_id=request.image_id,
-        image_type=request.image_type
+        image_type=request.image_type,
+        language=request.language
+
     )
 
     if result is None:

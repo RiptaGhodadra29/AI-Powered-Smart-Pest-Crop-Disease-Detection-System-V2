@@ -37,7 +37,7 @@ def load_disease_model():
     device = get_device()
 
     model = EfficientNetB0(
-        num_classes=34,
+        num_classes=60,
         pretrained=False,
         freeze_features=False
     )

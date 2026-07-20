@@ -22,7 +22,8 @@ class AIRouterService:
         db,
         user_id,
         image_id,
-        image_type
+        image_type,
+        language="en"
     ):
 
         image = (
@@ -44,7 +45,8 @@ class AIRouterService:
             result = create_prediction(
                 db=db,
                 user_id=user_id,
-                image_id=image_id
+                image_id=image_id,
+                language=language
             )
 
             return (

@@ -45,10 +45,27 @@ checkpoints/
 # Data and ML artifacts
 dataset/
 datasets/
-artifacts/
-*.pt
-*.pth
 *.onnx
 *.h5
 *.pkl
 *.joblib
+# Large datasets
+datasets_downloads/
+unknown_datasets/
+unknown_downloads/
+
+# Optional archived models
+archived_models/
+
+# Notebook outputs
+notebooks/artifacts/
+# Large datasets (DO NOT UPLOAD)
+datasets_downloads/
+unknown_datasets/
+unknown_downloads/
+
+# Runtime uploads
+backend/uploads/
+
+# Notebook outputs
+notebooks/artifacts/

@@ -19,8 +19,31 @@ class RecommendationService:
 
     def process_disease(self, disease_name: str):
 
-        recommendation = self.disease_recommender.get_recommendation(
-            disease_name
+        # Unknown crop support
+        if disease_name == "Unknown_Crop":
+
+            return {
+                "status": "unknown_crop",
+                "message": (
+                    "The uploaded image does not belong to any crop "
+                    "currently supported by the system."
+                )
+            }
+
+        # Healthy crop support
+        if "healthy" in disease_name.lower():
+
+            return {
+                "status": "healthy",
+                "message": (
+                    "The crop appears healthy. "
+                    "No disease symptoms detected."
+                )
+            }
+
+        recommendation = (
+            self.disease_recommender
+            .get_recommendation(disease_name)
         )
 
         return self.message_generator.generate_disease_message(
@@ -29,8 +52,9 @@ class RecommendationService:
 
     def process_pest(self, pest_name: str):
 
-        recommendation = self.pest_recommender.get_recommendation(
-            pest_name
+        recommendation = (
+            self.pest_recommender
+            .get_recommendation(pest_name)
         )
 
         return self.message_generator.generate_pest_message(
@@ -46,11 +70,13 @@ class RecommendationService:
         prediction_type = prediction_type.lower()
 
         if prediction_type == "disease":
+
             return self.process_disease(
                 prediction_name
             )
 
         elif prediction_type == "pest":
+
             return self.process_pest(
                 prediction_name
             )

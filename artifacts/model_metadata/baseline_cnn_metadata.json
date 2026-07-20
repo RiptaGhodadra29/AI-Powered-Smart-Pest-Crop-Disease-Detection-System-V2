@@ -1,0 +1,11 @@
+{
+    "model_name": "BaselineCNN",
+    "task": "Crop Disease Classification",
+    "num_classes": 15,
+    "image_size": 224,
+    "validation_accuracy": 94.99,
+    "framework": "PyTorch",
+    "dataset": "PlantVillage + PlantDoc",
+    "model_file": "baseline_cnn.pth",
+    "version": "1.0"
+}

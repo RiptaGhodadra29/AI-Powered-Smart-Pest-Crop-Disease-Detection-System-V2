@@ -8,6 +8,10 @@ from backend.app.models.prediction import (
     Prediction
 )
 
+from backend.app.models.recommendation import (
+    Recommendation
+)
+
 # Load trained pest model
 model = YOLO(
     "runs/detect/experiments/pest_detection/yolo11s_640_100e_bs8_v1-2/weights/best.pt"
@@ -89,7 +93,50 @@ def detect_and_save_pests(
         )
 
         db.add(prediction)
+        db.commit()
+        db.refresh(prediction)
 
-    db.commit()
+        recommendation = pest[
+            "recommendation"
+        ]
+
+        saved_recommendation = Recommendation(
+            prediction_id=prediction.id,
+            disease_name=recommendation.get(
+                "pest_name",
+                pest["pest_name"]
+            ),
+            severity=recommendation.get(
+                "damage_severity",
+                "Unknown"
+            ),
+            description=recommendation.get(
+                "description",
+                ""
+            ),
+            treatment=recommendation.get(
+                "organic_control",
+                ""
+            ),
+            organic_treatment=recommendation.get(
+                "organic_control",
+                ""
+            ),
+            chemical_treatment=recommendation.get(
+                "chemical_control",
+                ""
+            ),
+            preventive_measures=recommendation.get(
+                "prevention_measures",
+                ""
+            ),
+            monitoring_actions=recommendation.get(
+                "monitoring_actions",
+                ""
+            )
+        )
+
+        db.add(saved_recommendation)
+        db.commit()
 
     return detections

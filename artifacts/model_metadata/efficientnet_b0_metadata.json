@@ -1,0 +1,11 @@
+{
+    "model_name": "EfficientNet-B0",
+    "task": "Crop Disease Classification",
+    "num_classes": 60,
+    "image_size": 224,
+    "validation_accuracy": 94.90,
+    "framework": "PyTorch",
+    "dataset": "PlantVillage + PlantDoc",
+    "model_file": "efficientnet_b0.pth",
+    "version": "1.0"
+}

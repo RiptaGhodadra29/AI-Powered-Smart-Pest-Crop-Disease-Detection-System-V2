@@ -6,6 +6,7 @@ from datetime import datetime
 class PredictionRequest(BaseModel):
     user_id: int
     image_id: int
+    language: str = "en"
 
 
 class RecommendationResponse(BaseModel):
