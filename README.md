@@ -286,7 +286,7 @@ pip install -r requirements.txt
 ```
 
 ```bash
-uvicorn main:app --reload
+uvicorn backend.main:app --reload
 ```
 
 ---
