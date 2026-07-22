@@ -1,20 +1,20 @@
 from fastapi import FastAPI
 
 # Routers
-from app.api.auth import router as auth_router
-from app.api.image import router as image_router
-from app.api.prediction import router as prediction_router
-from app.api.history import router as history_router
-from app.api.dashboard import router as dashboard_router
-from app.api.docs import router as docs_router
-from app.api import pest_detection
-from app.api.ai_router import (router as ai_router_router)
-from app.api.recommendation import (router as recommendation_router)
+from backend.app.api.auth import router as auth_router
+from backend.app.api.image import router as image_router
+from backend.app.api.prediction import router as prediction_router
+from backend.app.api.history import router as history_router
+from backend.app.api.dashboard import router as dashboard_router
+from backend.app.api.docs import router as docs_router
+from backend.app.api import pest_detection
+from backend.app.api.ai_router import (router as ai_router_router)
+from backend.app.api.recommendation import (router as recommendation_router)
 
 
 
 # Core setup
-from app.core.cors import setup_cors
+from backend.app.core.cors import setup_cors
 
 
 app = FastAPI(
