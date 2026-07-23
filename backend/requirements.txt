@@ -26,3 +26,5 @@ torchvision
 ultralytics
 
 requests
+
+ albumentations
